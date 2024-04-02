@@ -13,6 +13,8 @@ public class AdenLevel : MonoBehaviour
         if (cnt == 0)
         {
             dialogue.text = "H-Hello. Can I have a nice bath please? (This is a young spirit. You know their parents, and you know they have not given them a bath in weeks.)";
+            Sprite newSprite = Resources.Load<Sprite>("duck");
+            customer.sprite = newSprite;
             cnt++;
         } else if (cnt == 1)
         {
