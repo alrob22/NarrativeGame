@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 131762198}
   - component: {fileID: 131762197}
   - component: {fileID: 131762196}
+  - component: {fileID: 131762199}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -205,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 131762197}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 131762199}
+        m_TargetAssemblyTypeName: AdenLevel, Assembly-CSharp
+        m_MethodName: ChangeDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &131762197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +257,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131762194}
   m_CullTransparentMesh: 1
+--- !u!114 &131762199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131762194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e44dbc04024815040a764759dd4192f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: 1
+  dialogue: {fileID: 1048866064}
+  customer: {fileID: 1009248004}
+  moneyText: {fileID: 1324911861}
 --- !u!1 &369743214
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +374,7 @@ RectTransform:
   - {fileID: 131762195}
   - {fileID: 910128862}
   - {fileID: 1048866063}
+  - {fileID: 1324911860}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -716,8 +746,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44dbc04024815040a764759dd4192f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: 0
   dialogue: {fileID: 1048866064}
   customer: {fileID: 1009248004}
+  moneyText: {fileID: 1324911861}
 --- !u!1 &1009248002
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +971,7 @@ GameObject:
   - component: {fileID: 1048866065}
   - component: {fileID: 1048866064}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1006,6 +1038,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1048866062}
+  m_CullTransparentMesh: 1
+--- !u!1 &1324911859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1324911860}
+  - component: {fileID: 1324911862}
+  - component: {fileID: 1324911861}
+  m_Layer: 5
+  m_Name: moneyText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1324911860
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324911859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 369743218}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 349, y: -144.63}
+  m_SizeDelta: {x: 89.7, y: 46.74}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1324911861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324911859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 93ace57a72981ef479c73eaaab213582, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: $550
+--- !u!222 &1324911862
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324911859}
   m_CullTransparentMesh: 1
 --- !u!1 &1492913705
 GameObject:
