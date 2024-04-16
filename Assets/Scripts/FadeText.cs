@@ -92,7 +92,7 @@ public class ConsoleSystem : MonoBehaviour
                         isRangeMax = true; // Would end the coroutine.
 
                         m_TextComponent.enabled = false;
-                        Debug.Log("Text inactive here");
+                        //Debug.Log("Text inactive here");
                     }
                 }
             }
