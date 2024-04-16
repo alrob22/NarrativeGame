@@ -40,7 +40,7 @@ public class RevealImage : MonoBehaviour
         if (color.a <= 0)
         {
             image.enabled = false;
-            Debug.Log("Image inactive here");
+            //Debug.Log("Image inactive here");
         }
     }
 }
