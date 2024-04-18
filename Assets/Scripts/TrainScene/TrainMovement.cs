@@ -31,7 +31,7 @@ public class TrainMovement : MonoBehaviour
     {
         if (currentSpeed == 0)
         {
-            SceneManager.LoadScene("TrainInside");  
+            SceneManager.LoadScene("TrainInside1");  
         }
     }
 }

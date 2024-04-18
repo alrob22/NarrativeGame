@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  nextSceneName: NextScene
+  nextSceneName: adenLevel
 --- !u!61 &160461199
 BoxCollider2D:
   m_ObjectHideFlags: 0
