@@ -8,6 +8,7 @@ TagManager:
   - Spirit
   - Wall
   - Coin
+  - SwitchSceneTrigger
   layers:
   - Default
   - TransparentFX
