@@ -14,8 +14,29 @@ public class SpawnedController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * Time.deltaTime * gameController.runSpeed);
-        if (transform.position.x < -9.5)
+        if (this.gameObject.CompareTag("Coin"))
+        {
+            transform.Translate(Vector2.right * Time.deltaTime * gameController.runSpeed);
+        }
+        else
+        {
+            transform.Translate(Vector2.left * Time.deltaTime * gameController.runSpeed);
+        }
+        if (transform.position.x < -9.5 || transform.position.x > 9.5)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Coin") && this.gameObject.CompareTag("Spirit"))
+        {
+            // move off the screen
+            gameController.spiritsSaved++;
+            Destroy(col.gameObject);
+            Destroy(this.gameObject);
+        }
+        else if (!col.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Coin"))
         {
             Destroy(this.gameObject);
         }

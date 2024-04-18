@@ -8,14 +8,19 @@ public class SenGameController : MonoBehaviour
     public float vertSpeed;
     public float UpLimit;
     public float DownLimit;
+    public int spiritsEaten = 0;
+    public int spiritsSaved = 0;
 
     [SerializeField] private int timeLimit;
     [SerializeField] private int dumplingCount;
+    public GameObject Coin;
     // Start is called before the first frame update
     void Start()
     {
-        timeLimit = 30;
+        timeLimit = 60;
         dumplingCount = 0;
+        spiritsEaten = 0;
+        spiritsSaved = 0;
         InvokeRepeating("timerCountDown", 1.0f, 1.0f);
     }
 
@@ -33,12 +38,23 @@ public class SenGameController : MonoBehaviour
                 transform.position = new Vector2(transform.position.x, UpLimit);
             }
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(Coin, transform.position, Quaternion.identity);
+        }
         if (dumplingCount == 5)
         {
+            // scene transition
+            Time.timeScale = 0;
+        }
+        if (spiritsEaten == 7)
+        {
+            // scene transition
             Time.timeScale = 0;
         }
         if (timeLimit <= 0)
         {
+            // scene transition
             Time.timeScale = 0;
         }
     }
@@ -54,6 +70,7 @@ public class SenGameController : MonoBehaviour
         {
             Destroy(col.gameObject);
             timeLimit += 10;
+            spiritsEaten++;
         }
         else if (col.gameObject.CompareTag("Wall"))
         {
