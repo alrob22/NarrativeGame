@@ -29,7 +29,7 @@ public class TrainMovement : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (currentSpeed == 0)
+        if (currentSpeed <= 0.1)
         {
             SceneManager.LoadScene("TrainInside1");  
         }
