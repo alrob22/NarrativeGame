@@ -52,12 +52,12 @@ public class SenController : MonoBehaviour
     }
     void SpawnSpirit()
     {
-        Instantiate(Spirit, transform.position, Quaternion.identity);
+        Instantiate(Spirit, new Vector2(10, Random.Range(DownLimit, UpLimit)), Quaternion.identity);
         Invoke("SpawnSpirit", Random.Range(3f, 7f));
     }
     void SpawnWall()
     {
-        Instantiate(Wall, transform.position, Quaternion.identity);
+        Instantiate(Wall, new Vector2(10, Random.Range(DownLimit, UpLimit)), Quaternion.identity);
         Invoke("SpawnWall", Random.Range(4f, 8f));
     }
 }

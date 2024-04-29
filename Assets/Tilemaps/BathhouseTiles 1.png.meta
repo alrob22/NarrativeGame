@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0dcc892e8482bbb46867dbb42532622a
+guid: ae8b828157b8da54484b1cec39222e50
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,64 +110,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sen_0
+      name: BathhouseTiles_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 16
         width: 16
-        height: 21
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 139b32ff976ec834b9e127a2faef400d
-      internalID: 784831052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sen_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe3a78c23fc99b2479494de51689262e
-      internalID: -1539432902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sen_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8816bd7ac93f2a140ae3853e5e422c1e
-      internalID: 22233745
+      spriteID: eb2391c35bfa21c44b43ef0863b4822a
+      internalID: -372889263
       vertices: []
       indices: 
       edges: []
@@ -183,9 +141,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sen_0: 784831052
-      sen_1: -1539432902
-      sen_2: 22233745
+      BathhouseTiles_0: -1260535718
+      BathhouseTiles_1: 183810421
+      BathhouseTiles_10: -114174479
+      BathhouseTiles_11: 1657735148
+      BathhouseTiles_12: -372889263
+      BathhouseTiles_13: 171745063
+      BathhouseTiles_14: 1417622437
+      BathhouseTiles_15: -197773489
+      BathhouseTiles_2: 1556935349
+      BathhouseTiles_3: -1746274860
+      BathhouseTiles_4: 167885488
+      BathhouseTiles_5: -1889238249
+      BathhouseTiles_6: -1045055630
+      BathhouseTiles_7: 1947924610
+      BathhouseTiles_8: 1012082699
+      BathhouseTiles_9: 711679951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

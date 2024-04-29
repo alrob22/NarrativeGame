@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 920432499}
   - component: {fileID: 920432498}
   - component: {fileID: 920432500}
+  - component: {fileID: 920432501}
   m_Layer: 0
   m_Name: Sen
   m_TagString: Untagged
@@ -228,12 +229,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0dcc892e8482bbb46867dbb42532622a, type: 3}
+  m_Sprite: {fileID: 784831052, guid: 0dcc892e8482bbb46867dbb42532622a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.3125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -274,6 +275,27 @@ MonoBehaviour:
   DownLimit: -3.75
   movementSpeed: 2
   moveDirection: 1
+--- !u!95 &920432501
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920432497}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97a7602cf1ed58a4eb1b1f0e8efb7acd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1165952569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,7 +4194,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7176471, g: 0.7176471, b: 0.7176471, a: 1}
   m_Origin: {x: -17, y: -5, z: 0}
   m_Size: {x: 45, y: 12, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -4207,6 +4229,7 @@ GameObject:
   - component: {fileID: 1179384200}
   - component: {fileID: 1179384202}
   - component: {fileID: 1179384201}
+  - component: {fileID: 1179384203}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4255,12 +4278,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: da941b3aa552fdc4b9eb0b2d4026d902, type: 3}
+  m_Sprite: {fileID: 1691066977, guid: da941b3aa552fdc4b9eb0b2d4026d902, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4293,6 +4316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9f6126a3677d748af547dc38962c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinDown: 0
   runSpeed: 10
   vertSpeed: 5
   UpLimit: 0.5
@@ -4302,6 +4326,7 @@ MonoBehaviour:
   timeLimit: 0
   dumplingCount: 0
   Coin: {fileID: 2863244290952541116, guid: e0e11c03240f39941ae27997a960d6b2, type: 3}
+  NoAnim: {fileID: 1179384203}
 --- !u!50 &1179384201
 Rigidbody2D:
   serializedVersion: 4
@@ -4365,8 +4390,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -4374,6 +4399,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &1179384203
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179384197}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9dd555fdf6e2d414fa749d1b008b63d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1334540362
 GameObject:
   m_ObjectHideFlags: 0
@@ -8257,7 +8303,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
   m_Origin: {x: -17, y: -5, z: 0}
   m_Size: {x: 45, y: 12, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}

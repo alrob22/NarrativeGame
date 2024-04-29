@@ -5,9 +5,11 @@ using UnityEngine;
 public class SpawnedController : MonoBehaviour
 {
     public SenGameController gameController;
+    private bool fleeingSpirit;
     // Start is called before the first frame update
     void Awake()
     {
+        fleeingSpirit = false;
         gameController = GameObject.FindWithTag("Player").GetComponent<SenGameController>();
     }
 
@@ -18,11 +20,15 @@ public class SpawnedController : MonoBehaviour
         {
             transform.Translate(Vector2.right * Time.deltaTime * gameController.runSpeed);
         }
-        else
+        else if (fleeingSpirit)
+        {
+            transform.Translate(Vector2.down * Time.deltaTime * gameController.runSpeed);
+        }
+        else 
         {
             transform.Translate(Vector2.left * Time.deltaTime * gameController.runSpeed);
         }
-        if (transform.position.x < -9.5 || transform.position.x > 9.5)
+        if (transform.position.x < -9.5 || transform.position.x > 10 || transform.position.y < -5.5)
         {
             Destroy(this.gameObject);
         }
@@ -33,8 +39,8 @@ public class SpawnedController : MonoBehaviour
         {
             // move off the screen
             gameController.spiritsSaved++;
-            Destroy(col.gameObject);
-            Destroy(this.gameObject);
+            fleeingSpirit = true;
+            Destroy(col.gameObject);  
         }
         else if (!col.gameObject.CompareTag("Player") && this.gameObject.CompareTag("Coin"))
         {
