@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SenGameController : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class SenGameController : MonoBehaviour
     public float UpLimit;
     public float DownLimit;
     public int spiritsEaten = 0;
+    [SerializeField] private Image[] SpiritSprites;
     public int spiritsSaved = 0;
 
     [SerializeField] private int timeLimit;
+    [SerializeField] private TMP_Text timer;
     [SerializeField] private int dumplingCount;
+    [SerializeField] private Image[] DumplingSprites;
     public GameObject Coin;
     public Animator NoAnim;
 
@@ -55,7 +59,7 @@ public class SenGameController : MonoBehaviour
             // scene transition
             Invoke("End", 0f);
         }
-        if (spiritsEaten == 7)
+        if (spiritsEaten == 5)
         {
             // scene transition
             Invoke("End", 0f);
@@ -73,25 +77,38 @@ public class SenGameController : MonoBehaviour
         {
             Destroy(col.gameObject);
             NoAnim.SetTrigger("Eat");
+            DumplingSprites[dumplingCount].enabled = true;
             dumplingCount++;
         }
         else if (col.gameObject.CompareTag("Spirit"))
         {
             Destroy(col.gameObject);
             timeLimit += 10;
+            timer.text = timeLimit.ToString();
+            timer.color = Color.green;
+            Invoke("TurnWhite", 1f);
             NoAnim.SetTrigger("Eat");
+            SpiritSprites[spiritsEaten].enabled = true;
             spiritsEaten++;
         }
         else if (col.gameObject.CompareTag("Wall"))
         {
             Destroy(col.gameObject);
             timeLimit -= 10;
+            timer.text = timeLimit.ToString();
+            timer.color = Color.red;
+            Invoke("TurnWhite", 1f);
         }
     }
 
     void timerCountDown()
     {
         timeLimit--;
+        timer.text = timeLimit.ToString();
+    }
+    void TurnWhite()
+    {
+        timer.color = Color.white;
     }
     void CoinFired()
     {
