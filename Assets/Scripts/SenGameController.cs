@@ -82,14 +82,15 @@ public class SenGameController : MonoBehaviour
         }
         else if (col.gameObject.CompareTag("Spirit"))
         {
-            Destroy(col.gameObject);
             timeLimit += 10;
             timer.text = timeLimit.ToString();
             timer.color = Color.green;
             Invoke("TurnWhite", 1f);
             NoAnim.SetTrigger("Eat");
             SpiritSprites[spiritsEaten].enabled = true;
+            SpiritSprites[spiritsEaten].sprite = col.gameObject.GetComponent<SpiritController>().sprites[col.gameObject.GetComponent<SpiritController>().SpiritType - 1];
             spiritsEaten++;
+            Destroy(col.gameObject);
         }
         else if (col.gameObject.CompareTag("Wall"))
         {
