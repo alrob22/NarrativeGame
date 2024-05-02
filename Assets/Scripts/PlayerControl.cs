@@ -9,6 +9,8 @@ public class PlayerControl : MonoBehaviour
     float speedX, speedY;
     Rigidbody2D rb;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class PlayerControl : MonoBehaviour
         speedX = Input.GetAxisRaw("Horizontal") * movSpeed;
         speedY = Input.GetAxisRaw("Vertical") * movSpeed;
         rb.velocity = new Vector2(speedX, speedY);
-        
+
     }
+
 }
