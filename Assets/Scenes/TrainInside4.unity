@@ -394,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   nextSceneName: 
-  scoreThreshold: 1
+  scoreThreshold: 10
   highScoreScene: HE
   lowScoreScene: BE
 --- !u!1 &164548388
