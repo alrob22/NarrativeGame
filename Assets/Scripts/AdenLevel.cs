@@ -124,7 +124,7 @@ public class AdenLevel : MonoBehaviour
             }
             else if (cnt == 3)
             {
-                dialogue.text = "I just got off of a multiple day shift and would love a soothing deep clean… Please give me a nice bath. (You know this spirit and know they have a bath in their room.)";
+                dialogue.text = "I just got off of a multiple day shift and would love a soothing deep clean?Please give me a nice bath. (You know this spirit and know they have a bath in their room.)";
                 customer.sprite = Resources.Load<Sprite>("boh2");
 
                 if (button == 0)
@@ -266,7 +266,7 @@ public class AdenLevel : MonoBehaviour
 
             if (transitionTime <= 0)
             {
-                SceneManager.LoadScene("TrainInside2 1");
+                SceneManager.LoadScene("TrainInside3");
             }
         }
     }
