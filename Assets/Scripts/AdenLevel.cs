@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AdenLevel : MonoBehaviour
@@ -37,7 +38,7 @@ public class AdenLevel : MonoBehaviour
                     }
                     else
                     {
-                        end(0);
+                        End(0);
                     }
                 }
                 else if (button == 1)
@@ -69,7 +70,7 @@ public class AdenLevel : MonoBehaviour
                     }
                     else
                     {
-                        end(0);
+                        End(0);
                     }
                 }
                 else if (button == 1)
@@ -102,7 +103,7 @@ public class AdenLevel : MonoBehaviour
                     }
                     else
                     {
-                        end(0);
+                        End(0);
                     }
                 }
                 else if (button == 1)
@@ -135,7 +136,7 @@ public class AdenLevel : MonoBehaviour
                     }
                     else
                     {
-                        end(0);
+                        End(0);
                     }
                 }
                 else if (button == 1)
@@ -167,7 +168,7 @@ public class AdenLevel : MonoBehaviour
                     }
                     else
                     {
-                        end(0);
+                        End(0);
                     }
                 }
                 else if (button == 1)
@@ -201,7 +202,7 @@ public class AdenLevel : MonoBehaviour
                     else
                     {
                         money = 0;
-                        end(0);
+                        End(0);
                     }
                 }
                 else if (button == 1)
@@ -227,11 +228,11 @@ public class AdenLevel : MonoBehaviour
                     if (money >= 50)
                     {
                         money -= 50;
-                        end(1);
+                        End(1);
                     }
                     else
                     {
-                        end(0);
+                        End(0);
                     }
                 }
                 else if (button == 1)
@@ -240,7 +241,7 @@ public class AdenLevel : MonoBehaviour
                     {
                         money -= 100;
                         points += 1;
-                        end(1);
+                        End(1);
                     }
                     else
                     {
@@ -255,10 +256,27 @@ public class AdenLevel : MonoBehaviour
         Debug.Log("points: " + points);
     }
 
-    public void end(int ending)
+    private float transitionTime = 3;
+
+    private void Update()
+    {
+        if (!go)
+        {
+            transitionTime -= Time.deltaTime;
+
+            if (transitionTime <= 0)
+            {
+                SceneManager.LoadScene("TrainInside2 1");
+            }
+        }
+    }
+
+    // GO TO NEXT SCENE- do this in Update()
+    public void End(int ending)
     {
         cnt = 0;
         go = false;
+        Player.totalPoints += points; // can get 3.5 points total
 
         if (ending == 0)
         {
@@ -268,8 +286,8 @@ public class AdenLevel : MonoBehaviour
         {
             dialogue.text = "It seems you have ran out of customers. We shall see how moral your judgement was.";
             customer.sprite = Resources.Load<Sprite>("transparent");
-        }
+        }        
 
-        // GO TO NEXT SCENE- 3.5 points for good :)
+        Debug.Log("total points: " + Player.totalPoints);
     }
 }
