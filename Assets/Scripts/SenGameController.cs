@@ -119,7 +119,7 @@ public class SenGameController : MonoBehaviour
     {
         Player.totalPoints += spiritsSaved;
         Player.totalPoints -= spiritsEaten;
-        SceneManager.LoadScene("TrainInside2 1"); // Change this scene
+        SceneManager.LoadScene("TrainInside4"); // Change this scene
         Debug.Log("total points: " + Player.totalPoints);
     }
 }
